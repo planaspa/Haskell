@@ -1,3 +1,4 @@
+module Game (module Game) where
 -----------------------
 -- TIPOS DE DATOS -----
 -----------------------
@@ -17,7 +18,6 @@ instance Show Personaje where
     show Oveja   = "\tOveja y Pastor\n"
     show Lechuga = "\tLechuga y Pastor\n"
 	
-
 -----------------------
 ----- MÉTODOS ---------
 -----------------------
@@ -65,10 +65,3 @@ noSeComen p = ovejaPos == pastorPos || ovejaSegura && lechugaSegura
         pastorPos     = posicionDe p Pastor
         ovejaSegura   = ovejaPos /= posicionDe p Lobo
         lechugaSegura = posicionDe p Lechuga /= ovejaPos
-
------------------
------ MAIN ------
------------------
-main :: IO ()
-main = do
-    print $ encuentraSoluciones 7
